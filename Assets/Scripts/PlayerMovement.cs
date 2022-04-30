@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed = 1.0f;
+    [SerializeField] float fallSpeed = 1.0f;
+    [SerializeField] float resetSpeed = 1.0f;
     [SerializeField] float maxDist = 0.0f;
     [SerializeField] float chargeRate = 0.2f;
     [SerializeField][Range(0.0f, 10.0f)] float maxSpeed = 10.0f;
@@ -55,18 +57,24 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(!onLeft && isMoving)
         {
-            transform.position += transform.right * -speed * Time.deltaTime;
+            transform.position -= transform.right * speed * Time.deltaTime;
             if(transform.position.x <= -maxDist)
             {
                 isMoving = false;
                 speed = 1.0f;
             }
         }
+
+        if(!isMoving && !isCharging && (transform.position.y <= 0))
+        {
+            transform.position += transform.up * resetSpeed * Time.deltaTime;
+        }
     }
 
     private void Charge()
     {
         speed += chargeRate * Time.deltaTime;
+        transform.position -= transform.up * fallSpeed * Time.deltaTime;
     }
 
     
