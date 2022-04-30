@@ -6,21 +6,40 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed = 1.0f;
     [SerializeField] float maxDist = 0.0f;
+    [SerializeField] float chargeRate = 0.2f;
     [SerializeField][Range(0.0f, 10.0f)] float maxSpeed = 10.0f;
-    [SerializeField] [Range(0.0f, 10.0f)] float chargeAmount = 0.0f; //Can make private in future
 
     private bool onLeft = true;
     private bool isMoving = false;
+    private bool isCharging = false;
 
     void Start()
     {
-        
+        Mathf.Clamp(speed, 1.0f, maxSpeed);
     }
 
     void Update()
     {
         CheckPlayerInput();
         Move();
+        if(isCharging)
+        {
+            Charge();
+        }
+    }
+
+    private void CheckPlayerInput()
+    {
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && !isMoving)
+        {
+            isCharging = true;
+        }
+        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0)) && !isMoving)
+        {
+            isCharging = false;
+            isMoving = true;
+            onLeft = !onLeft;
+        }
     }
 
     private void Move()
@@ -31,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
             if(transform.position.x >= maxDist)
             {
                 isMoving = false;
+                speed = 1.0f;
             }
         }
         else if(!onLeft && isMoving)
@@ -39,16 +59,15 @@ public class PlayerMovement : MonoBehaviour
             if(transform.position.x <= -maxDist)
             {
                 isMoving = false;
+                speed = 1.0f;
             }
         }
     }
 
-    private void CheckPlayerInput()
+    private void Charge()
     {
-        if((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && !isMoving)
-        {
-            isMoving = true;
-            onLeft = !onLeft;
-        }
+        speed += chargeRate * Time.deltaTime;
     }
+
+    
 }

@@ -217,7 +217,7 @@ Transform:
   m_GameObject: {fileID: 4043186159637255475}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4043186157934582476}
   - {fileID: 4043186159585749893}
@@ -237,9 +237,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  maxDist: 0
+  maxDist: 1.5
+  chargeRate: 0.8
   maxSpeed: 10
-  chargeAmount: 0
 --- !u!65 &1891776332
 BoxCollider:
   m_ObjectHideFlags: 0
