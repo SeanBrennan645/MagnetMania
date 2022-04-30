@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if(!isMoving && !isCharging && (transform.position.y <= 0))
+        if(!isMoving && !isCharging/* && (transform.position.y <= 0)*/)
         {
             transform.position += transform.up * resetSpeed * Time.deltaTime;
         }
@@ -73,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Charge()
     {
+        //TODO Implement a system to have fall speed accerlate over time
         speed += chargeRate * Time.deltaTime;
         transform.position -= transform.up * fallSpeed * Time.deltaTime;
     }

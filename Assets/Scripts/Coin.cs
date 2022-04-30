@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] int pointValue;
+    public int pointValue = 50;
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")

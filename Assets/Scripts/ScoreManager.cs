@@ -32,4 +32,9 @@ public class ScoreManager : MonoBehaviour
         //Debug.Log("Score: " + score);
     }
 
+    public void StopScore()
+    {
+        isGamePlaying = false;
+    }
+
 }
