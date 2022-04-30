@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
 
     private int score = 0;
-    private bool isGamePlaying = true;
+    private bool isGamePlaying = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,6 @@ public class ScoreManager : MonoBehaviour
     {
         while (isGamePlaying)
         {
-            //Debug.Log("Score: " + score);
             score += defaultScoreRate;
             scoreText.text = "Score\n" + score;
             yield return new WaitForSeconds(timeIncrements);
