@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] GameObject[] itemstoSpawn;
+    [SerializeField] GameObject[] itemsToSpawn;
     [SerializeField] Transform spawnLocation;
     [SerializeField] float spawnTimer = 2.0f;
+    [SerializeField] float maxObjectSpeed = 2.0f;
+    [SerializeField] float minObjectSpeed = 0.5f;
 
     private Vector3 startPosition;
     private bool isGameRunning = true;
@@ -14,6 +16,12 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         startPosition = transform.position;
+    }
+
+    private void Awake()
+    {
+        startPosition = transform.position;
+        SetupPool();
     }
 
     private void OnEnable()
@@ -29,10 +37,10 @@ public class Spawner : MonoBehaviour
 
     private void SetupPool()
     {
-        for(int i = 0; i<itemstoSpawn.Length; i++)
+        for(int i = 0; i< itemsToSpawn.Length; i++)
         {
-            itemstoSpawn[i].transform.position = startPosition;
-            itemstoSpawn[i].SetActive(false);
+            itemsToSpawn[i].transform.position = startPosition;
+            itemsToSpawn[i].SetActive(false);
         }
     }
 
@@ -47,12 +55,13 @@ public class Spawner : MonoBehaviour
 
     private void EnableObjectInPool()
     {
-        for(int i = 0; i<itemstoSpawn.Length; i++)
+        for(int i = 0; i< itemsToSpawn.Length; i++)
         {
-            if(itemstoSpawn[i].activeInHierarchy == false)
+            if(itemsToSpawn[i].activeInHierarchy == false)
             {
-                itemstoSpawn[i].transform.position = startPosition;
-                itemstoSpawn[i].SetActive(true);
+                itemsToSpawn[i].transform.position = startPosition;
+                itemsToSpawn[i].GetComponent<ObjectFaller>().SetFallSpeed(Random.Range(minObjectSpeed, maxObjectSpeed));
+                itemsToSpawn[i].SetActive(true);
                 return;
             }
         }
