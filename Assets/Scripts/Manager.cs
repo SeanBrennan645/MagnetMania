@@ -19,7 +19,7 @@ public class Manager : MonoBehaviour
         mainUI.SetActive(true);//replace with end UI
         for (int i = 0; i < spawners.Length; i++)
         {
-            //spawners[i].SetActive(false);
+            spawners[i].GetComponent<Spawner>().DisableAllCurrentSpawns();
             spawners[i].GetComponent<Spawner>().GameStateChanged();
         }
     }

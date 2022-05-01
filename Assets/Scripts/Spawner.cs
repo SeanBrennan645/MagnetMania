@@ -75,4 +75,16 @@ public class Spawner : MonoBehaviour
         isGameRunning = !isGameRunning;
     }
 
+    public void DisableAllCurrentSpawns()
+    {
+        for(int i = 0; i<itemsToSpawn.Length; i++)
+        {
+            if(itemsToSpawn[i].activeInHierarchy == true)
+            {
+                itemsToSpawn[i].SetActive(false);
+            }
+        }
+        return;
+    }
+
 }

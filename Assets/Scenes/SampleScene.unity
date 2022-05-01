@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 80547724}
   - component: {fileID: 80547726}
   - component: {fileID: 80547725}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 291587118}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -45.9}
+  m_AnchoredPosition: {x: 0, y: -115}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &339837206
@@ -899,7 +899,7 @@ GameObject:
   - component: {fileID: 595460107}
   - component: {fileID: 595460106}
   - component: {fileID: 595460105}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MainMenuCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1271,7 +1271,7 @@ GameObject:
   - component: {fileID: 889713996}
   - component: {fileID: 889713998}
   - component: {fileID: 889713997}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1502,7 +1502,7 @@ GameObject:
   - component: {fileID: 1129049640}
   - component: {fileID: 1129049642}
   - component: {fileID: 1129049641}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PlayGameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2147,7 +2147,7 @@ GameObject:
   - component: {fileID: 1692295632}
   - component: {fileID: 1692295631}
   - component: {fileID: 1692295630}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
