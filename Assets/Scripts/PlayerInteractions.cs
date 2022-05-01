@@ -18,6 +18,7 @@ public class PlayerInteractions : MonoBehaviour
         else if(other.tag == "Hazard")
         {
             score.StopScore();
+            gameManager.GameOver();
             Debug.Log("YOU DEAD");
             //TODO logic to display scoreboard and button to reset level
         }
