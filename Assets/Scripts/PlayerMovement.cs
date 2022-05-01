@@ -78,5 +78,11 @@ public class PlayerMovement : MonoBehaviour
         transform.position -= transform.up * fallSpeed * Time.deltaTime;
     }
 
+    public void ResetMovement()
+    {
+        onLeft = true;
+        isMoving = false;
+        isCharging = false;
+    }
     
 }

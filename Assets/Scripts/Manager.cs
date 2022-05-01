@@ -14,6 +14,7 @@ public class Manager : MonoBehaviour
 
     public void GameOver()
     {
+        player.GetComponent<PlayerMovement>().ResetMovement();
         player.SetActive(false);
         mainUI.SetActive(true);//replace with end UI
         for (int i = 0; i < spawners.Length; i++)
