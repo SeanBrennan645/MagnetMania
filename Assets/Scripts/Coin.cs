@@ -9,7 +9,6 @@ public class Coin : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Debug.Log("Increase player score");
             gameObject.SetActive(false);
         }
         else

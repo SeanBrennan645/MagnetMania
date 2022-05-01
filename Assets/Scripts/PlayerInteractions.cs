@@ -6,6 +6,8 @@ public class PlayerInteractions : MonoBehaviour
 {
     [SerializeField] ScoreManager score;
     [SerializeField] Manager gameManager;
+    [SerializeField] Transform startPosition;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,5 +25,10 @@ public class PlayerInteractions : MonoBehaviour
         {
             return;
         }
+    }
+
+    public void resetPlayer()
+    {
+        gameObject.transform.position = startPosition.transform.position;
     }
 }

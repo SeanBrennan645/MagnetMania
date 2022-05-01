@@ -33,7 +33,11 @@ public class ScoreManager : MonoBehaviour
     {
         score += points;
         scoreText.text = "Score\n" + score;
-        //Debug.Log("Score: " + score);
+    }
+
+    public void ResetScore()
+    {
+        score = 0;
     }
 
     public void StopScore()

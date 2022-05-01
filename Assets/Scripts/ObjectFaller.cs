@@ -22,4 +22,9 @@ public class ObjectFaller : MonoBehaviour
             return;
         }
     }
+
+    public void SetFallSpeed(float newSpeed)
+    {
+        fallSpeed = newSpeed;
+    }
 }

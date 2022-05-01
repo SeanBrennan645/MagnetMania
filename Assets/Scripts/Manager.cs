@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
+    [SerializeField] ScoreManager scoreManager;
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject mainUI;
+    [SerializeField] GameObject scoreUI;
+    [SerializeField] GameObject endUI;
 
-    // Start is called before the first frame update
-    void Start()
+    public void GameOver()
     {
-
+        scoreManager.StopScore();
+        //display end ui
+        //disable spawners
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartGame()
     {
-        
+        scoreManager.ResetScore();
+        //disable current ui
+        //reset player
+        //start spawners
     }
 }
