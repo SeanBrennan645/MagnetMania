@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] float minObjectSpeed = 0.5f;
 
     private Vector3 startPosition;
-    private bool isGameRunning = true;
+    private bool isGameRunning = false;
 
     private void Start()
     {
@@ -46,9 +46,12 @@ public class Spawner : MonoBehaviour
 
     IEnumerator SpawnObject()
     {
-        while(isGameRunning)
+        while(true)
         {
-            EnableObjectInPool();
+            if (isGameRunning)
+            {
+                EnableObjectInPool();
+            }
             yield return new WaitForSeconds(spawnTimer);
         }
     }

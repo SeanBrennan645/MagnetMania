@@ -14,24 +14,26 @@ public class Manager : MonoBehaviour
 
     public void GameOver()
     {
-        scoreManager.StopScore();
         player.SetActive(false);
         mainUI.SetActive(true);//replace with end UI
         for (int i = 0; i < spawners.Length; i++)
         {
+            //spawners[i].SetActive(false);
             spawners[i].GetComponent<Spawner>().GameStateChanged();
         }
     }
 
     public void StartGame()
     {
+        scoreManager.StartStopScore();
         scoreManager.ResetScore();
         mainUI.SetActive(false);
         scoreUI.SetActive(true);
-        player.GetComponent<PlayerInteractions>().resetPlayer();
         player.SetActive(true);
+        player.GetComponent<PlayerInteractions>().resetPlayer();
         for(int i = 0; i < spawners.Length; i++)
         {
+            //spawners[i].SetActive(true);
             spawners[i].GetComponent<Spawner>().GameStateChanged();
         }
     }

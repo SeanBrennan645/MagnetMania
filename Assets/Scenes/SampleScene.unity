@@ -905,7 +905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &595460104
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1686,7 +1686,7 @@ MonoBehaviour:
   itemsToSpawn:
   - {fileID: 1966913595}
   spawnLocation: {fileID: 1252679832}
-  spawnTimer: 3
+  spawnTimer: 6
   maxObjectSpeed: 1
   minObjectSpeed: 0.5
 --- !u!4 &1268025856 stripped
@@ -1856,7 +1856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1587514244
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2216,7 +2216,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1692295631}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1485588080}
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1692295631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2265,11 +2277,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4043186159637255475, guid: 72ca222c96165a648b8a44d2107fea8f, type: 3}
   m_PrefabInstance: {fileID: 4043186157745758840}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1891776335 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4043186159637255476, guid: 72ca222c96165a648b8a44d2107fea8f, type: 3}
-  m_PrefabInstance: {fileID: 4043186157745758840}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1891776336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2284,7 +2291,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: {fileID: 1485588079}
   gameManager: {fileID: 1485588080}
-  startPosition: {fileID: 1891776335}
 --- !u!1 &1947885988
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,7 +2358,7 @@ MonoBehaviour:
   - {fileID: 869526802}
   - {fileID: 2146158897}
   spawnLocation: {fileID: 1947885989}
-  spawnTimer: 2
+  spawnTimer: 10
   maxObjectSpeed: 0.8
   minObjectSpeed: 0.5
 --- !u!1 &1966913595 stripped
@@ -2577,6 +2583,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4043186159637255475, guid: 72ca222c96165a648b8a44d2107fea8f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4043186159637255476, guid: 72ca222c96165a648b8a44d2107fea8f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5
@@ -2768,6 +2778,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6532602875298793284, guid: 11116d94e5f108444ac05cc7c2a1ac09, type: 3}
+      propertyPath: spawners.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532602875298793284, guid: 11116d94e5f108444ac05cc7c2a1ac09, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 1485588079}
+    - target: {fileID: 6532602875298793284, guid: 11116d94e5f108444ac05cc7c2a1ac09, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1891776331}
+    - target: {fileID: 6532602875298793284, guid: 11116d94e5f108444ac05cc7c2a1ac09, type: 3}
+      propertyPath: mainUI
+      value: 
+      objectReference: {fileID: 595460103}
+    - target: {fileID: 6532602875298793284, guid: 11116d94e5f108444ac05cc7c2a1ac09, type: 3}
+      propertyPath: scoreUI
+      value: 
+      objectReference: {fileID: 1587514243}
+    - target: {fileID: 6532602875298793284, guid: 11116d94e5f108444ac05cc7c2a1ac09, type: 3}
+      propertyPath: endUI
+      value: 
+      objectReference: {fileID: 595460103}
+    - target: {fileID: 6532602875298793284, guid: 11116d94e5f108444ac05cc7c2a1ac09, type: 3}
+      propertyPath: spawners.Array.data[0]
+      value: 
+      objectReference: {fileID: 1947885988}
+    - target: {fileID: 6532602875298793284, guid: 11116d94e5f108444ac05cc7c2a1ac09, type: 3}
+      propertyPath: spawners.Array.data[1]
+      value: 
+      objectReference: {fileID: 542656813}
+    - target: {fileID: 6532602875298793284, guid: 11116d94e5f108444ac05cc7c2a1ac09, type: 3}
+      propertyPath: spawners.Array.data[2]
+      value: 
+      objectReference: {fileID: 1252679831}
     - target: {fileID: 6532602875298793285, guid: 11116d94e5f108444ac05cc7c2a1ac09, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

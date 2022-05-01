@@ -6,8 +6,13 @@ public class PlayerInteractions : MonoBehaviour
 {
     [SerializeField] ScoreManager score;
     [SerializeField] Manager gameManager;
-    [SerializeField] Transform startPosition;
 
+    private Vector3 startPosition;
+
+    private void Start()
+    {
+        startPosition = transform.position;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,7 +22,8 @@ public class PlayerInteractions : MonoBehaviour
         }
         else if(other.tag == "Hazard")
         {
-            score.StopScore();
+            resetPlayer();
+            score.StartStopScore();
             gameManager.GameOver();
             Debug.Log("YOU DEAD");
             //TODO logic to display scoreboard and button to reset level
@@ -30,6 +36,6 @@ public class PlayerInteractions : MonoBehaviour
 
     public void resetPlayer()
     {
-        gameObject.transform.position = startPosition.transform.position;
+        gameObject.transform.position = startPosition;
     }
 }

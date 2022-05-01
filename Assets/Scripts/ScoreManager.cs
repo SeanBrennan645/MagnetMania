@@ -21,10 +21,13 @@ public class ScoreManager : MonoBehaviour
 
     private IEnumerator IncreaseScoreAuto()
     {
-        while (isGamePlaying)
+        while (true)
         {
-            score += defaultScoreRate;
-            scoreText.text = "Score\n" + score;
+            if (isGamePlaying)
+            {
+                score += defaultScoreRate;
+                scoreText.text = "Score\n" + score;              
+            }
             yield return new WaitForSeconds(timeIncrements);
         }
     }
@@ -40,9 +43,10 @@ public class ScoreManager : MonoBehaviour
         score = 0;
     }
 
-    public void StopScore()
+    public void StartStopScore()
     {
-        isGamePlaying = false;
+        Debug.Log("SCOREMAN!"); 
+        isGamePlaying = !isGamePlaying;
     }
 
 }
