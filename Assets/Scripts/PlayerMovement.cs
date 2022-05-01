@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isCharging = true;
         }
-        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0)) && !isMoving)
+        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(0)) && !isMoving && isCharging)
         {
             isCharging = false;
             isMoving = true;
