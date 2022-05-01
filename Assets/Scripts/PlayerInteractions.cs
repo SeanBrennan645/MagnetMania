@@ -25,7 +25,6 @@ public class PlayerInteractions : MonoBehaviour
             resetPlayer();
             score.StartStopScore();
             gameManager.GameOver();
-            Debug.Log("YOU DEAD");
             //TODO logic to display scoreboard and button to reset level
         }
         else

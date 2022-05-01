@@ -3065,6 +3065,7 @@ GameObject:
   - component: {fileID: 6912281935843605340}
   - component: {fileID: 2246758927358021740}
   - component: {fileID: 4740937802243465518}
+  - component: {fileID: 2699721106314014924}
   m_Layer: 0
   m_Name: CoinBlock (1)
   m_TagString: Untagged
@@ -3141,6 +3142,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2699721106314014924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6159709445763043911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7f111db946e0c4ea357af48fe11295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coins:
+  - {fileID: 7715589171866846155}
+  - {fileID: 4293025771604417248}
+  - {fileID: 1148138560340240533}
+  - {fileID: 2314876927612770351}
+  - {fileID: 3462012793257961243}
+  - {fileID: 2318854122412204631}
+  - {fileID: 2864686633084727514}
+  - {fileID: 1861098883786331285}
+  - {fileID: 2966874895524891434}
+  - {fileID: 7789668046514894580}
+  - {fileID: 948576907465782668}
+  - {fileID: 7405141171562486336}
+  - {fileID: 5401553031116616167}
 --- !u!1 &6592466656061971940
 GameObject:
   m_ObjectHideFlags: 0
@@ -4622,6 +4649,11 @@ PrefabInstance:
     - {fileID: 4675045645404408038, guid: 6298fd0cd486fd7429eb36455d43e44f, type: 3}
     - {fileID: 8561716166458231419, guid: 6298fd0cd486fd7429eb36455d43e44f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6298fd0cd486fd7429eb36455d43e44f, type: 3}
+--- !u!1 &5401553031116616167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7754147241122107359, guid: 6298fd0cd486fd7429eb36455d43e44f, type: 3}
+  m_PrefabInstance: {fileID: 2407851342204468792}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5401553031116616162 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7754147241122107354, guid: 6298fd0cd486fd7429eb36455d43e44f, type: 3}
